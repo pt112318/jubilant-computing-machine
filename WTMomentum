@@ -1,0 +1,95 @@
+#region Using declarations
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Xml.Serialization;
+using NinjaTrader.Cbi;
+using NinjaTrader.Gui;
+using NinjaTrader.Gui.Chart;
+using NinjaTrader.Gui.SuperDom;
+using NinjaTrader.Gui.Tools;
+using NinjaTrader.Data;
+using NinjaTrader.NinjaScript;
+using NinjaTrader.Core.FloatingPoint;
+
+#endregion
+
+
+
+#region NinjaScript generated code. Neither change nor remove.
+
+namespace NinjaTrader.NinjaScript.Indicators
+{
+	public partial class Indicator : NinjaTrader.Gui.NinjaScript.IndicatorRenderBase
+	{
+		
+		private WTMomentum[] cacheWTMomentum;
+
+		
+		public WTMomentum WTMomentum(int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			return WTMomentum(Input, sensitivity, colorBars, threshold, thresholdLineColor, upperThresholdMarkerColor, lowerThresholdMarkerColor, negativeBarColor, positiveBarColor, wickColor, verticalLines, verticalLineUp, verticalLineDown, alertSoundToPlay, alertSounds);
+		}
+
+
+		
+		public WTMomentum WTMomentum(ISeries<double> input, int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			if (cacheWTMomentum != null)
+				for (int idx = 0; idx < cacheWTMomentum.Length; idx++)
+					if (cacheWTMomentum[idx].Sensitivity == sensitivity && cacheWTMomentum[idx].ColorBars == colorBars && cacheWTMomentum[idx].Threshold == threshold && cacheWTMomentum[idx].ThresholdLineColor == thresholdLineColor && cacheWTMomentum[idx].UpperThresholdMarkerColor == upperThresholdMarkerColor && cacheWTMomentum[idx].LowerThresholdMarkerColor == lowerThresholdMarkerColor && cacheWTMomentum[idx].NegativeBarColor == negativeBarColor && cacheWTMomentum[idx].PositiveBarColor == positiveBarColor && cacheWTMomentum[idx].WickColor == wickColor && cacheWTMomentum[idx].VerticalLines == verticalLines && cacheWTMomentum[idx].VerticalLineUp == verticalLineUp && cacheWTMomentum[idx].VerticalLineDown == verticalLineDown && cacheWTMomentum[idx].AlertSoundToPlay == alertSoundToPlay && cacheWTMomentum[idx].AlertSounds == alertSounds && cacheWTMomentum[idx].EqualsInput(input))
+						return cacheWTMomentum[idx];
+			return CacheIndicator<WTMomentum>(new WTMomentum(){ Sensitivity = sensitivity, ColorBars = colorBars, Threshold = threshold, ThresholdLineColor = thresholdLineColor, UpperThresholdMarkerColor = upperThresholdMarkerColor, LowerThresholdMarkerColor = lowerThresholdMarkerColor, NegativeBarColor = negativeBarColor, PositiveBarColor = positiveBarColor, WickColor = wickColor, VerticalLines = verticalLines, VerticalLineUp = verticalLineUp, VerticalLineDown = verticalLineDown, AlertSoundToPlay = alertSoundToPlay, AlertSounds = alertSounds }, input, ref cacheWTMomentum);
+		}
+
+	}
+}
+
+namespace NinjaTrader.NinjaScript.MarketAnalyzerColumns
+{
+	public partial class MarketAnalyzerColumn : MarketAnalyzerColumnBase
+	{
+		
+		public Indicators.WTMomentum WTMomentum(int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			return indicator.WTMomentum(Input, sensitivity, colorBars, threshold, thresholdLineColor, upperThresholdMarkerColor, lowerThresholdMarkerColor, negativeBarColor, positiveBarColor, wickColor, verticalLines, verticalLineUp, verticalLineDown, alertSoundToPlay, alertSounds);
+		}
+
+
+		
+		public Indicators.WTMomentum WTMomentum(ISeries<double> input , int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			return indicator.WTMomentum(input, sensitivity, colorBars, threshold, thresholdLineColor, upperThresholdMarkerColor, lowerThresholdMarkerColor, negativeBarColor, positiveBarColor, wickColor, verticalLines, verticalLineUp, verticalLineDown, alertSoundToPlay, alertSounds);
+		}
+	
+	}
+}
+
+namespace NinjaTrader.NinjaScript.Strategies
+{
+	public partial class Strategy : NinjaTrader.Gui.NinjaScript.StrategyRenderBase
+	{
+		
+		public Indicators.WTMomentum WTMomentum(int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			return indicator.WTMomentum(Input, sensitivity, colorBars, threshold, thresholdLineColor, upperThresholdMarkerColor, lowerThresholdMarkerColor, negativeBarColor, positiveBarColor, wickColor, verticalLines, verticalLineUp, verticalLineDown, alertSoundToPlay, alertSounds);
+		}
+
+
+		
+		public Indicators.WTMomentum WTMomentum(ISeries<double> input , int sensitivity, bool colorBars, int threshold, Brush thresholdLineColor, Brush upperThresholdMarkerColor, Brush lowerThresholdMarkerColor, Brush negativeBarColor, Brush positiveBarColor, Brush wickColor, bool verticalLines, Stroke verticalLineUp, Stroke verticalLineDown, string alertSoundToPlay, bool alertSounds)
+		{
+			return indicator.WTMomentum(input, sensitivity, colorBars, threshold, thresholdLineColor, upperThresholdMarkerColor, lowerThresholdMarkerColor, negativeBarColor, positiveBarColor, wickColor, verticalLines, verticalLineUp, verticalLineDown, alertSoundToPlay, alertSounds);
+		}
+
+	}
+}
+
+#endregion
