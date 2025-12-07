@@ -1,0 +1,95 @@
+#region Using declarations
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Xml.Serialization;
+using NinjaTrader.Cbi;
+using NinjaTrader.Gui;
+using NinjaTrader.Gui.Chart;
+using NinjaTrader.Gui.SuperDom;
+using NinjaTrader.Gui.Tools;
+using NinjaTrader.Data;
+using NinjaTrader.NinjaScript;
+using NinjaTrader.Core.FloatingPoint;
+
+#endregion
+
+
+
+#region NinjaScript generated code. Neither change nor remove.
+
+namespace NinjaTrader.NinjaScript.Indicators
+{
+	public partial class Indicator : NinjaTrader.Gui.NinjaScript.IndicatorRenderBase
+	{
+		
+		private WTBarsV3[] cacheWTBarsV3;
+
+		
+		public WTBarsV3 WTBarsV3(int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			return WTBarsV3(Input, wTPeriod, wTVersion, barColorUp, barColorDown, shadowColor, dojiColor, neutralIntentColor, shadowWidth, sound_MomentumBar, sound_DojiBar, sound_PauseBar, sound_NewSetupBar, alert_MomentumBar, alert_DojiBar, alert_PauseBar, alert_NewSetupBar, colorsByMomo, colorsByMomo_Sensitivity, threshold, plot_TI, period1, period2, level1, level2, intentOffsetTics, tI_ThresholdPct, rangeBracket, lineThickness, closeUpColor, closeDownColor, showExitProjection, stopBarCount, stopBarOffsetSteps, showStackedBars, stackedNBars, stackedTrendBars, stackedResetBars, stackedResetAtAWstart, stackedColorUp, stackedColorDn, showPotentialSetups, entryOffsetSteps, initialStopSteps, fixedTargetSteps, moneyMgtPct, matchesForSetup, activeModeStartTime, activeModeMinutes, trendRiderMinutes);
+		}
+
+
+		
+		public WTBarsV3 WTBarsV3(ISeries<double> input, int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			if (cacheWTBarsV3 != null)
+				for (int idx = 0; idx < cacheWTBarsV3.Length; idx++)
+					if (cacheWTBarsV3[idx].WTPeriod == wTPeriod && cacheWTBarsV3[idx].WTVersion == wTVersion && cacheWTBarsV3[idx].BarColorUp == barColorUp && cacheWTBarsV3[idx].BarColorDown == barColorDown && cacheWTBarsV3[idx].ShadowColor == shadowColor && cacheWTBarsV3[idx].DojiColor == dojiColor && cacheWTBarsV3[idx].NeutralIntentColor == neutralIntentColor && cacheWTBarsV3[idx].ShadowWidth == shadowWidth && cacheWTBarsV3[idx].Sound_MomentumBar == sound_MomentumBar && cacheWTBarsV3[idx].Sound_DojiBar == sound_DojiBar && cacheWTBarsV3[idx].Sound_PauseBar == sound_PauseBar && cacheWTBarsV3[idx].Sound_NewSetupBar == sound_NewSetupBar && cacheWTBarsV3[idx].Alert_MomentumBar == alert_MomentumBar && cacheWTBarsV3[idx].Alert_DojiBar == alert_DojiBar && cacheWTBarsV3[idx].Alert_PauseBar == alert_PauseBar && cacheWTBarsV3[idx].Alert_NewSetupBar == alert_NewSetupBar && cacheWTBarsV3[idx].ColorsByMomo == colorsByMomo && cacheWTBarsV3[idx].ColorsByMomo_Sensitivity == colorsByMomo_Sensitivity && cacheWTBarsV3[idx].Threshold == threshold && cacheWTBarsV3[idx].Plot_TI == plot_TI && cacheWTBarsV3[idx].Period1 == period1 && cacheWTBarsV3[idx].Period2 == period2 && cacheWTBarsV3[idx].Level1 == level1 && cacheWTBarsV3[idx].Level2 == level2 && cacheWTBarsV3[idx].IntentOffsetTics == intentOffsetTics && cacheWTBarsV3[idx].TI_ThresholdPct == tI_ThresholdPct && cacheWTBarsV3[idx].RangeBracket == rangeBracket && cacheWTBarsV3[idx].LineThickness == lineThickness && cacheWTBarsV3[idx].CloseUpColor == closeUpColor && cacheWTBarsV3[idx].CloseDownColor == closeDownColor && cacheWTBarsV3[idx].ShowExitProjection == showExitProjection && cacheWTBarsV3[idx].StopBarCount == stopBarCount && cacheWTBarsV3[idx].StopBarOffsetSteps == stopBarOffsetSteps && cacheWTBarsV3[idx].ShowStackedBars == showStackedBars && cacheWTBarsV3[idx].StackedNBars == stackedNBars && cacheWTBarsV3[idx].StackedTrendBars == stackedTrendBars && cacheWTBarsV3[idx].StackedResetBars == stackedResetBars && cacheWTBarsV3[idx].StackedResetAtAWstart == stackedResetAtAWstart && cacheWTBarsV3[idx].StackedColorUp == stackedColorUp && cacheWTBarsV3[idx].StackedColorDn == stackedColorDn && cacheWTBarsV3[idx].ShowPotentialSetups == showPotentialSetups && cacheWTBarsV3[idx].EntryOffsetSteps == entryOffsetSteps && cacheWTBarsV3[idx].InitialStopSteps == initialStopSteps && cacheWTBarsV3[idx].FixedTargetSteps == fixedTargetSteps && cacheWTBarsV3[idx].MoneyMgtPct == moneyMgtPct && cacheWTBarsV3[idx].MatchesForSetup == matchesForSetup && cacheWTBarsV3[idx].ActiveModeStartTime == activeModeStartTime && cacheWTBarsV3[idx].ActiveModeMinutes == activeModeMinutes && cacheWTBarsV3[idx].TrendRiderMinutes == trendRiderMinutes && cacheWTBarsV3[idx].EqualsInput(input))
+						return cacheWTBarsV3[idx];
+			return CacheIndicator<WTBarsV3>(new WTBarsV3(){ WTPeriod = wTPeriod, WTVersion = wTVersion, BarColorUp = barColorUp, BarColorDown = barColorDown, ShadowColor = shadowColor, DojiColor = dojiColor, NeutralIntentColor = neutralIntentColor, ShadowWidth = shadowWidth, Sound_MomentumBar = sound_MomentumBar, Sound_DojiBar = sound_DojiBar, Sound_PauseBar = sound_PauseBar, Sound_NewSetupBar = sound_NewSetupBar, Alert_MomentumBar = alert_MomentumBar, Alert_DojiBar = alert_DojiBar, Alert_PauseBar = alert_PauseBar, Alert_NewSetupBar = alert_NewSetupBar, ColorsByMomo = colorsByMomo, ColorsByMomo_Sensitivity = colorsByMomo_Sensitivity, Threshold = threshold, Plot_TI = plot_TI, Period1 = period1, Period2 = period2, Level1 = level1, Level2 = level2, IntentOffsetTics = intentOffsetTics, TI_ThresholdPct = tI_ThresholdPct, RangeBracket = rangeBracket, LineThickness = lineThickness, CloseUpColor = closeUpColor, CloseDownColor = closeDownColor, ShowExitProjection = showExitProjection, StopBarCount = stopBarCount, StopBarOffsetSteps = stopBarOffsetSteps, ShowStackedBars = showStackedBars, StackedNBars = stackedNBars, StackedTrendBars = stackedTrendBars, StackedResetBars = stackedResetBars, StackedResetAtAWstart = stackedResetAtAWstart, StackedColorUp = stackedColorUp, StackedColorDn = stackedColorDn, ShowPotentialSetups = showPotentialSetups, EntryOffsetSteps = entryOffsetSteps, InitialStopSteps = initialStopSteps, FixedTargetSteps = fixedTargetSteps, MoneyMgtPct = moneyMgtPct, MatchesForSetup = matchesForSetup, ActiveModeStartTime = activeModeStartTime, ActiveModeMinutes = activeModeMinutes, TrendRiderMinutes = trendRiderMinutes }, input, ref cacheWTBarsV3);
+		}
+
+	}
+}
+
+namespace NinjaTrader.NinjaScript.MarketAnalyzerColumns
+{
+	public partial class MarketAnalyzerColumn : MarketAnalyzerColumnBase
+	{
+		
+		public Indicators.WTBarsV3 WTBarsV3(int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			return indicator.WTBarsV3(Input, wTPeriod, wTVersion, barColorUp, barColorDown, shadowColor, dojiColor, neutralIntentColor, shadowWidth, sound_MomentumBar, sound_DojiBar, sound_PauseBar, sound_NewSetupBar, alert_MomentumBar, alert_DojiBar, alert_PauseBar, alert_NewSetupBar, colorsByMomo, colorsByMomo_Sensitivity, threshold, plot_TI, period1, period2, level1, level2, intentOffsetTics, tI_ThresholdPct, rangeBracket, lineThickness, closeUpColor, closeDownColor, showExitProjection, stopBarCount, stopBarOffsetSteps, showStackedBars, stackedNBars, stackedTrendBars, stackedResetBars, stackedResetAtAWstart, stackedColorUp, stackedColorDn, showPotentialSetups, entryOffsetSteps, initialStopSteps, fixedTargetSteps, moneyMgtPct, matchesForSetup, activeModeStartTime, activeModeMinutes, trendRiderMinutes);
+		}
+
+
+		
+		public Indicators.WTBarsV3 WTBarsV3(ISeries<double> input , int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			return indicator.WTBarsV3(input, wTPeriod, wTVersion, barColorUp, barColorDown, shadowColor, dojiColor, neutralIntentColor, shadowWidth, sound_MomentumBar, sound_DojiBar, sound_PauseBar, sound_NewSetupBar, alert_MomentumBar, alert_DojiBar, alert_PauseBar, alert_NewSetupBar, colorsByMomo, colorsByMomo_Sensitivity, threshold, plot_TI, period1, period2, level1, level2, intentOffsetTics, tI_ThresholdPct, rangeBracket, lineThickness, closeUpColor, closeDownColor, showExitProjection, stopBarCount, stopBarOffsetSteps, showStackedBars, stackedNBars, stackedTrendBars, stackedResetBars, stackedResetAtAWstart, stackedColorUp, stackedColorDn, showPotentialSetups, entryOffsetSteps, initialStopSteps, fixedTargetSteps, moneyMgtPct, matchesForSetup, activeModeStartTime, activeModeMinutes, trendRiderMinutes);
+		}
+	
+	}
+}
+
+namespace NinjaTrader.NinjaScript.Strategies
+{
+	public partial class Strategy : NinjaTrader.Gui.NinjaScript.StrategyRenderBase
+	{
+		
+		public Indicators.WTBarsV3 WTBarsV3(int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			return indicator.WTBarsV3(Input, wTPeriod, wTVersion, barColorUp, barColorDown, shadowColor, dojiColor, neutralIntentColor, shadowWidth, sound_MomentumBar, sound_DojiBar, sound_PauseBar, sound_NewSetupBar, alert_MomentumBar, alert_DojiBar, alert_PauseBar, alert_NewSetupBar, colorsByMomo, colorsByMomo_Sensitivity, threshold, plot_TI, period1, period2, level1, level2, intentOffsetTics, tI_ThresholdPct, rangeBracket, lineThickness, closeUpColor, closeDownColor, showExitProjection, stopBarCount, stopBarOffsetSteps, showStackedBars, stackedNBars, stackedTrendBars, stackedResetBars, stackedResetAtAWstart, stackedColorUp, stackedColorDn, showPotentialSetups, entryOffsetSteps, initialStopSteps, fixedTargetSteps, moneyMgtPct, matchesForSetup, activeModeStartTime, activeModeMinutes, trendRiderMinutes);
+		}
+
+
+		
+		public Indicators.WTBarsV3 WTBarsV3(ISeries<double> input , int wTPeriod, int wTVersion, Brush barColorUp, Brush barColorDown, Brush shadowColor, Brush dojiColor, Brush neutralIntentColor, int shadowWidth, string sound_MomentumBar, string sound_DojiBar, string sound_PauseBar, string sound_NewSetupBar, bool alert_MomentumBar, bool alert_DojiBar, bool alert_PauseBar, bool alert_NewSetupBar, bool colorsByMomo, int colorsByMomo_Sensitivity, int threshold, bool plot_TI, int period1, int period2, int level1, int level2, int intentOffsetTics, int tI_ThresholdPct, bool rangeBracket, int lineThickness, Brush closeUpColor, Brush closeDownColor, bool showExitProjection, int stopBarCount, int stopBarOffsetSteps, bool showStackedBars, int stackedNBars, int stackedTrendBars, int stackedResetBars, bool stackedResetAtAWstart, Brush stackedColorUp, Brush stackedColorDn, bool showPotentialSetups, double entryOffsetSteps, double initialStopSteps, double fixedTargetSteps, int moneyMgtPct, int matchesForSetup, double activeModeStartTime, double activeModeMinutes, double trendRiderMinutes)
+		{
+			return indicator.WTBarsV3(input, wTPeriod, wTVersion, barColorUp, barColorDown, shadowColor, dojiColor, neutralIntentColor, shadowWidth, sound_MomentumBar, sound_DojiBar, sound_PauseBar, sound_NewSetupBar, alert_MomentumBar, alert_DojiBar, alert_PauseBar, alert_NewSetupBar, colorsByMomo, colorsByMomo_Sensitivity, threshold, plot_TI, period1, period2, level1, level2, intentOffsetTics, tI_ThresholdPct, rangeBracket, lineThickness, closeUpColor, closeDownColor, showExitProjection, stopBarCount, stopBarOffsetSteps, showStackedBars, stackedNBars, stackedTrendBars, stackedResetBars, stackedResetAtAWstart, stackedColorUp, stackedColorDn, showPotentialSetups, entryOffsetSteps, initialStopSteps, fixedTargetSteps, moneyMgtPct, matchesForSetup, activeModeStartTime, activeModeMinutes, trendRiderMinutes);
+		}
+
+	}
+}
+
+#endregion
